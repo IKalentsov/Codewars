@@ -1,0 +1,24 @@
+using System;
+
+class SumParts
+{
+
+    public static int[] PartsSums(int[] ls)
+    {
+        var length_arr = ls.Length;
+            int [] resultOut = new int [ls.Length + 1]; 
+            int current= 0;
+            int summ = 0;
+
+            Array.Reverse(ls);
+      
+            for (int i_ls = 0; i_ls < length_arr; i_ls++)
+            {
+                current = ls[i_ls];
+                summ = summ + current;
+                resultOut[i_ls+1] = summ;
+            } 
+            Array.Reverse(resultOut);
+            return resultOut;
+    }
+}
